@@ -1,6 +1,34 @@
 // pre-load x image
 let hitImage = new Image();
 hitImage.src = 'x.png';
+
+let difficultyOptions = document.querySelectorAll('.difficulty-option');
+
+//setup the difficulty selection
+difficultyOptions.forEach(option => {
+  option.addEventListener('click', function() {
+    // Remove 'selected' class from previously selected difficulty
+    document.querySelectorAll('.difficulty-option').forEach(opt => opt.classList.remove('selected'));
+
+    // Add 'selected' class to clicked difficulty
+    this.classList.add('selected');
+  });
+});
+
+//make sure the start button works with the difficulty selected
+document.getElementById('start-game').addEventListener('click', function() {
+  let selectedDifficulty = document.querySelector('.difficulty-option.selected');
+  
+  if (selectedDifficulty) {
+    let difficulty = selectedDifficulty.id;
+    new Game(difficulty);
+  } else {
+    // Provide feedback to the user if no difficulty is selected
+    alert('Please select a difficulty level.');
+  }
+});
+
+
 // bird class
 class Bird {
     constructor(speed, gameContainer) {
@@ -130,6 +158,7 @@ class Bird {
       
   }
   
+ /* 
   let difficulties = ['EASY', 'MEDIUM', 'XTREME'];
   let selectedIndex = 0;
   
@@ -157,7 +186,9 @@ class Bird {
         new Game(difficulties[selectedIndex]);
         break;
     }
-  });
+  } 
+  );*/ 
+  
   
 
   
