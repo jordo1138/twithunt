@@ -103,8 +103,8 @@ class Bird {
       // difficulty levels
       const DIFFICULTIES = {
         'EASY': {numBirds: 5, speed: 1},
-        'MEDIUM': {numBirds: 15, speed: 1.5},
-        'XTREME': {numBirds: 25, speed: 2}
+        'MEDIUM': {numBirds: 15, speed: 3},
+        'XTREME': {numBirds: 25, speed: 5}
       };
   
       // create the birds
