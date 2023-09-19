@@ -22,6 +22,9 @@ document.getElementById('start-game').addEventListener('click', function() {
   if (selectedDifficulty) {
     let difficulty = selectedDifficulty.id;
     new Game(difficulty);
+    // Start the game music
+    let gameMusic = document.getElementById('gameMusic');
+    gameMusic.play();
   } else {
     // Provide feedback to the user if no difficulty is selected
     alert('Please select a difficulty level.');
